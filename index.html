@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Karl's Convenient Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Karl's Convenient Converter</h1>
+    <div class="input-section">
+      <input type="number" id="pressureInput" placeholder="Enter pressure">
+      <select id="unitSelect">
+        <option value="mmHg">mmHg</option>
+        <option value="cmHg">cmHg</option>
+        <option value="kPa">kPa</option>
+        <option value="inHg">inHg</option>
+      </select>
+    </div>
+    <div class="buttons">
+      <button id="calculateBtn">Calculate</button>
+      <button id="clearBtn">Clear</button>
+    </div>
+    <div class="output-section">
+      <div class="output-box mmhg" id="output-mmhg">
+        <span>mmHg</span>
+        <p>0</p>
+      </div>
+      <div class="output-box cmhg" id="output-cmhg">
+        <span>cmHg</span>
+        <p>0</p>
+      </div>
+      <div class="output-box kpa" id="output-kpa">
+        <span>kPa</span>
+        <p>0</p>
+      </div>
+      <div class="output-box inhg" id="output-inhg">
+        <span>inHg</span>
+        <p>0</p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

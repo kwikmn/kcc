@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("image1.png");
+  background-size: cover;
+  background-position: center;
+  colour: #333;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.input-section {
+  margin-bottom: 20px;
+}
+
+.input-section input, .input-section select {
+  padding: 10px;
+  font-size: 16px;
+  margin: 5px;
+}
+
+.buttons {
+  margin-bottom: 20px;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.output-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.output-box {
+  flex: 1 1 40%;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  colour: #fff;
+  text-align: center;
+}
+
+.output-box span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Different background colours for each unit */
+.output-box.mmhg {
+  background-color: #3498db;
+}
+.output-box.cmhg {
+  background-color: #e67e22;
+}
+.output-box.kpa {
+  background-color: #2ecc71;
+}
+.output-box.inhg {
+  background-color: #9b59b6;
+}
