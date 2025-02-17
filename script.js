@@ -9,22 +9,22 @@ const conversionFactors = {
 function convertPressure(value, fromUnit) {
   // Convert the input value to mmHg
   const valueInMmHg = value * conversionFactors[fromUnit];
-
-  // Convert mmHg to cmHg (note: use conversionFactors.cmHg correctly)
+  // Convert mmHg to cmHg
   const cmHg = valueInMmHg / conversionFactors.cmHg;
-
-  // Calculate other conversions:
+  
+  // Calculate conversions:
   const conversions = {
     mmHg: valueInMmHg,
     cmHg: cmHg,
     kPa: valueInMmHg / conversionFactors.kPa,
     inHg: valueInMmHg / conversionFactors.inHg,
-    // For centifathoms of Gallium (cfGa):
-    // 1 cfGa is defined as 1/100th of a fathom, i.e. 1.8288 cm of gallium.
-    // Because gallium is less dense than mercury, a 1.8288 cm column of gallium produces ~0.794 cmHg.
-    // Thus, cfGa = (cmHg) / 0.794.
+    // 1 cfGa = 1/100th of a fathom = 1.8288 cm of gallium.
+    // A 1-cm column of mercury produces 1 cmHg, but gallium is less dense.
+    // Published data suggest that a 1.8288 cm column of gallium produces ~0.794 cmHg.
+    // So, cfGa = (cmHg) / 0.794.
     cfGa: cmHg / 0.794
   };
+  console.log("Conversions:", conversions);  // Debugging output
   return conversions;
 }
 
@@ -42,6 +42,8 @@ document.getElementById("calculateBtn").addEventListener("click", () => {
   if (!isNaN(inputValue)) {
     const conversions = convertPressure(inputValue, fromUnit);
     updateOutput(conversions);
+  } else {
+    console.log("Input is not a valid number.");
   }
 });
 
